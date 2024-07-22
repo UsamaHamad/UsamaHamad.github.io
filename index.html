@@ -11,7 +11,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f2f2f2;
             color: #333;
         }
         .container {
@@ -30,10 +30,17 @@
             margin-bottom: 10px;
             font-weight: 600;
         }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
         h2 {
             font-size: 2.5em;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 3px solid #007bff;
             padding-bottom: 5px;
+            margin-bottom: 20px;
         }
         ul {
             padding-left: 20px;
@@ -57,58 +64,80 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 5px;
-        }
         header p {
             font-size: 1.2em;
             color: #666;
         }
         /* Education Section */
-        #education {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+        #education, #skills, #experience, #projects, #professional-summary {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
-        #education h3 {
-            font-size: 1.8em;
+        #education h3, #skills h2, #experience h2, #projects h2, #professional-summary h2 {
             color: #007bff;
             margin-bottom: 10px;
         }
         /* Skills Section */
-        #skills {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+        #skills p {
+            font-size: 1.2em;
         }
-        #skills h2 {
-            color: #007bff;
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-item {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
         }
         /* Experience Section */
-        #experience {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+        #experience ul {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
         }
-        #experience h2 {
-            color: #007bff;
+        .experience-item {
+            border-left: 3px solid #007bff;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #007bff;
         }
         /* Projects Section */
-        #projects {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+        #projects ul {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
         }
-        #projects h2 {
-            color: #007bff;
+        .project-item {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid #007bff;
+        }
+        .project-item:hover {
+            background-color: #e0e0e0;
         }
         /* Professional Summary Section */
-        #professional-summary {
-            margin-bottom: 20px;
-        }
-        #professional-summary h2 {
-            color: #007bff;
+        #professional-summary p {
+            font-size: 1.2em;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -137,28 +166,62 @@
 
         <section id="skills">
             <h2>SKILLS</h2>
-            <p><strong>Languages:</strong> Python, C, C#, C++, Java, R, Golang, OCaml, SML, JavaScript, Julia, MySQL, Presto, CodeQL, x86 Assembly</p>
-            <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, Django, Flask, Soot, TensorFlow, Git, AWS, Docker, Linux, Bash, Mathematica, Tableau</p>
+            <p><strong>Languages:</strong></p>
+            <div class="skills-list">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">C</span>
+                <span class="skill-item">C#</span>
+                <span class="skill-item">C++</span>
+                <span class="skill-item">Java</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">HTML</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">AWS</span>
+                <span class="skill-item">Docker</span>
+                <span class="skill-item">Linux</span>
+            </div>
+            <p><strong>Technologies:</strong></p>
+            <div class="skills-list">
+                <span class="skill-item">Bootstrap</span>
+                <span class="skill-item">Django</span>
+                <span class="skill-item">Flask</span>
+                <span class="skill-item">TensorFlow</span>
+                <span class="skill-item">Soot</span>
+                <span class="skill-item">Mathematica</span>
+                <span class="skill-item">Tableau</span>
+                <span class="skill-item">Golang</span>
+                <span class="skill-item">OCaml</span>
+                <span class="skill-item">SML</span>
+                <span class="skill-item">Presto</span>
+                <span class="skill-item">CodeQL</span>
+                <span class="skill-item">x86 Assembly</span>
+            </div>
         </section>
 
         <section id="experience">
             <h2>WORK EXPERIENCE</h2>
-            <p><strong>Federal Signal</strong> - Software Engineer (May 2022 – Present)</p>
-            <ul>
-                <li>Developed and managed GUI applications for convergence network software and FSLink software using the C# .NET framework 4.5 architecture MVVM.</li>
-                <li>Integrated fifteen new products into the convergence network software, enhancing user programming capabilities within the GUI.</li>
-                <!-- Add more work experience details -->
-            </ul>
+            <div class="experience-item">
+                <p><strong>Federal Signal</strong> - Software Engineer (May 2022 – Present)</p>
+                <ul>
+                    <li>Developed and managed GUI applications for convergence network software and FSLink software using the C# .NET framework 4.5 architecture MVVM.</li>
+                    <li>Integrated fifteen new products into the convergence network software, enhancing user programming capabilities within the GUI.</li>
+                    <!-- Add more work experience details -->
+                </ul>
+            </div>
         </section>
 
         <section id="projects">
             <h2>PROJECTS</h2>
-            <p><strong>Hearthstone Deckbuilder</strong> (December 2020 – January 2021)</p>
-            <ul>
-                <li>Developed a predictive tool to rank card choices, aiding players’ deckbuilding decisions in Arena mode.</li>
-                <li>Drafted a design document outlining goals and technical architecture, including web scraping with Beautiful Soup, data preprocessing with NumPy, and analysis using deep learning models.</li>
-                <!-- Add more project details -->
-            </ul>
+            <div class="project-item">
+                <p><strong>Hearthstone Deckbuilder</strong> (December 2020 – January 2021)</p>
+                <ul>
+                    <li>Developed a predictive tool to rank card choices, aiding players’ deckbuilding decisions in Arena mode.</li>
+                    <li>Drafted a design document outlining goals and technical architecture, including web scraping with Beautiful Soup, data preprocessing with NumPy, and analysis using deep learning models.</li>
+                    <!-- Add more project details -->
+                </ul>
+            </div>
         </section>
 
         <section id="professional-summary">
